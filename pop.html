@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Popup</title>
+    <style>
+        /* Base page styling (just for demonstration) */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        /* The dark semi-transparent overlay behind the popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* The white popup box */
+        .modal-box {
+            background-color: #ffffff;
+            border-radius: 14px;
+            width: 80%;
+            max-width: 320px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* The blank space for your custom message */
+        .modal-content {
+            padding: 24px;
+            flex-grow: 1;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* The bottom area for buttons, aligned to the right */
+        .modal-actions {
+            padding: 8px 16px 16px 16px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        /* Styling for the text buttons to look like the image */
+        .action-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #007AFF; /* Standard iOS blue */
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .action-btn:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Popup Modal -->
+    <div class="modal-overlay" id="customPopup">
+        <div class="modal-box">
+            
+            <!-- CUSTOM MESSAGE AREA -->
+            <div class="modal-content">
+                <h3>Notice</h3>
+                <p>Your Apple ID was recently used at APPLE STORE for $277.89 Via Apple Pay Pre-Authorization!
+We have placed those request on hold to ensure safest and Security.
+ Not you?
+ Immediately call Apple Support +1 (877) 295-1489 to Freeze it!.
+Cancel OK</p>
+            </div>
+            
+            <!-- BUTTONS -->
+            <div class="modal-actions">
+                <button class="action-btn" onclick="closePopup()">Cancel</button>
+                <!-- Replace 1234567890 with your actual phone number -->
+                <a href="tel:1234567890" class="action-btn">Call Now</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Function to close the popup when 'Cancel' is clicked
+        function closePopup() {
+            document.getElementById('customPopup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
