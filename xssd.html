@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup with Logo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0 0 20px 0;
+            color: #000;
+        }
+
+        /* Circular Logo Placeholder Styling */
+        .modal-logo {
+            width: 90px;
+            height: 90px;
+            background-color: #d1d1d1;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #888;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        /* Image styling for when you add your actual logo */
+        .modal-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-message {
+            font-size: 15px;
+            color: #000;
+            margin: 0 0 25px 0;
+            line-height: 1.4;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .btn-call {
+            background-color: #2ecc71;
+        }
+
+        .btn-cancel {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal-overlay" id="popupModal">
+        <div class="modal-box">
+            <h2 class="modal-title">Special Offer!</h2>
+            
+            <!-- Logo Section -->
+            <div class="modal-logo">
+                <!-- Replace 'Logo' text below with your image tag when ready -->
+                <!-- <img src="your-image-path.jpg" alt="Logo"> -->
+                Logo
+            </div>
+            
+            <p class="modal-message">
+                Speak directly with one of our specialists today to<br>unlock exclusive rates!
+            </p>
+            
+            <div class="modal-actions">
+                <a href="tel:1234567890" class="btn btn-call">Call Now</a>
+                <button class="btn btn-cancel" onclick="document.getElementById('popupModal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
